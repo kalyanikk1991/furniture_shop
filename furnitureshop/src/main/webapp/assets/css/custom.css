@@ -1,0 +1,199 @@
+.header{
+	text-align: center;
+	background-color: #595b5e;
+	padding:18px;
+	font-family:'Open Sans', sans-serif;
+	letter-spacing:5px;
+	color:black;
+}
+
+
+
+ul{
+	list-style-type:none;
+	overflow:hidden;
+	background-color:#333;
+	margin: 0;
+	font-family:'Open Sans', sans-serif;
+	letter-spacing:1px;
+	
+
+}
+
+li {
+	float:left;
+	
+}
+
+li a{
+	color:white;
+	display:block;
+	text-align:center;
+	padding:16px;
+	text-decoration: none;
+	margin-left:100px;
+}
+
+li a:hover{
+	background-color:#3c3c3d;
+}
+
+
+#cart img{
+	height:30px;
+	width:30px;
+}
+img{
+	height:600px;
+	width:990px;
+
+}
+.login-container {
+	height:600px;
+	width:991px;
+	background-image: url("images/login-background.jpg");
+	background-size: cover;
+	background-position: center;
+    background-repeat: no-repeat;
+    
+	
+	
+
+}
+
+.login-container .form-container{
+
+
+	position: absolute;
+	top:300px;
+	left: 200px;
+	bottom: 5px;
+	background: rgba(0, 0, 0, 0.5); 
+	/* Black background with transparency */
+	border-radius: 5px;
+	padding: 12px;
+
+}
+
+input[type=text],[type=password]{
+	width: 100%;
+	padding:12px 14px;
+	margin:14px 0;
+	display: inline-block;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border:none;
+
+
+}
+
+.login-btn{
+	width:100%;
+	padding:12px 14px ;
+	margin:8px 0 ;
+	border-radius: 5px;
+	border:none;
+	margin-bottom: 12px
+}
+
+.login-lbl
+{
+	
+	color:white;
+	font-family:'Open Sans', sans-serif;
+	
+}
+
+.logn-content{
+	text-align: center;
+	color:white;
+	font-family:'Open Sans', sans-serif;
+	
+}
+.logn-content a{
+	text-decoration:none;
+}
+
+.register-container {
+	height:600px;
+	width:991px;
+	background-image: url("images/login-background.jpg");
+	background-size: cover;
+	background-position: center;
+    background-repeat: no-repeat;
+    
+	
+	
+
+}
+.register-container .form-container{
+
+
+	position: absolute;
+	top:220px;
+	left: 300px;
+	right: 300px;
+	background: rgba(0, 0, 0, 0.5); 
+	/* Black background with transparency */
+	border-radius: 5px;
+	padding: 8px;
+
+}
+.register-btn{
+	width:100%;
+	padding:12px 14px ;
+	margin:8px 0 ;
+	border-radius: 5px;
+	border:none;
+	margin-bottom: 12px
+}
+
+.register-lbl
+{
+	
+	color:white;
+	font-family:'Open Sans', sans-serif;
+	
+}
+
+.register-content{
+	text-align: center;
+	color:white;
+	font-family:'Open Sans', sans-serif;
+	
+}
+.register-content a{
+	text-decoration:none;
+}
+.register-btn{
+	width:100%;
+	padding:12px 14px ;
+	margin:8px 0 ;
+	border-radius: 5px;
+	border:none;
+	margin-bottom: 12px
+	
+}
+
+.register-lbl
+{
+	
+	color:white;
+	font-family:'Open Sans', sans-serif;
+	
+}
+
+.logn-content{
+	text-align: center;
+	color:white;
+	font-family:'Open Sans', sans-serif;
+	
+}
+.logn-content a{
+	text-decoration:none;
+}
+.register-radio{
+	color:white;
+	font-family:'Open Sans', sans-serif;
+	padding:12px 14px ;
+}
