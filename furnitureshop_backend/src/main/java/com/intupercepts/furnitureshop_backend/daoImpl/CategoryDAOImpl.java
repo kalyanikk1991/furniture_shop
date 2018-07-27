@@ -1,72 +1,93 @@
 package com.intupercepts.furnitureshop_backend.daoImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.intupercepts.furnitureshop_backend.dao.CategoryDAO;
 import com.intupercepts.furnitureshop_backend.dto.Category;
 
 @Repository("CategoryDAO")
+@Transactional
 public class CategoryDAOImpl implements CategoryDAO {
 
-	private static List<Category> Categories=new ArrayList<>();
-	
-	static{
-		
-		Category category= new Category();
-		
-		//adding first category
-		
-		category.setId(1);
-		category.setName("Indoor Furniture");
-		category.setDescription("Indoor category");
-		category.setImageURL("cat1.png");
-		
-		Categories.add(category);
-		
-		
-		category= new Category();
-		
-		//adding Second category
-		
-		category.setId(2);
-		category.setName("Outdoor Furniture ");
-		category.setDescription("Out door category");
-		category.setImageURL("cat1.png");
-		
-		Categories.add(category);
-		
-		
-		
-		category= new Category();
-		
-		//adding Third  category
-		
-		category.setId(3);
-		category.setName("Kitchen");
-		category.setDescription("Kitchen Furniture category");
-		category.setImageURL("cat1.png");
-		
-		Categories.add(category);
-		
-	}
-	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	// private static List<Category> Categories=new ArrayList<>();
+
 	@Override
 	public List<Category> list() {
-		
-		return Categories;
+
+		String selectActiveCategory = "FROM Category WHERE active= :active";
+
+		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
+		query.setParameter("active", true);
+
+		return query.getResultList();
+	}
+
+	/* single category */
+	@Override
+	public Category get(int id) {
+
+		return sessionFactory.getCurrentSession().get(Category.class, Integer.valueOf(id));
 	}
 
 	@Override
-	public Category get(int id) {
-		// for each categories
-		for(Category category:Categories){
-			if(category.getId()==id)
-			return category;
+
+	public boolean add(Category category) {
+		try {
+
+			// add the category to the database table
+			sessionFactory.getCurrentSession().persist(category);
+			return true;
 		}
-		return null;
+
+		catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+
+	}
+
+	/*
+	 * updating asingle category
+	 */
+	@Override
+	public boolean update(Category category) {
+		try {
+
+			// add the category to the database table
+			sessionFactory.getCurrentSession().update(category);
+			return true;
+		}
+
+		catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
+
+	@Override
+	public boolean delete(Category category) {
+		// TODO Auto-generated method stub
+
+		category.setActive(false);
+
+		try {
+			// add the category to the database table
+			sessionFactory.getCurrentSession().update(category);
+			return true;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+
 	}
 
 }
