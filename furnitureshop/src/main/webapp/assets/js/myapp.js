@@ -22,5 +22,38 @@ $(function() {
 	}
 	
 	
+	//code forjquery datatable
+	//create a dataset
+	
+	var products=[
+	              
+	              ['1','abc'],
+	              ['2','efg'],
+	              ['3','hij'],
+	              ['4','klm'],
+	              ['5','nop'],
+	              ['6','uvw'],
+	              ['7','qrs'],
+	              ['8','xyz']
+	              
+	              ];
+	
+	
+	var $table=$('#productListTable');
+	//execute the below codeonly where we have this table
+	
+	if($table.length){
+		
+		
+		$table.DataTable({
+			
+			data:products
+			
+		});
+		
+		
+		
+		}
+	
 	
 });

@@ -29,6 +29,9 @@
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
+<%-- <!-- Bootstrap core CSS -->
+<link href="${css}/dataTables.bootstrap.min.css" rel="stylesheet"> --%>
+
 <!-- Custom styles for this template -->
 <link href="${css}/custom.css" rel="stylesheet">
 
@@ -78,10 +81,23 @@
 		<%@include file="./shared/footer.jsp"%>
 
 
-		<!-- Bootstrap core JavaScript -->
+		<!--jQuery -->
 		<script src="${js}/jquery.min.js"></script>
+		
+		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
-
+		
+		<!--jQuery Datatables plugin -->
+		<script src="${js}/jquery.dataTables.min.js"></script>
+		
+		<%-- <!--jQuery Datatables plugin -->
+		<script src="${js}/dataTables.bootstrap.min.js"></script> --%>
+		
+		
+		<!--popper.js plugin //becoz giving error for dropdown -->
+		<script src="${js}/popper.min.js"></script>
+		
+		
 		<!-- for active menu problem comes here -->
 		<script src="${js}/myapp.js"></script>
 
